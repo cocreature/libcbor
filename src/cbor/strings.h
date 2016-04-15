@@ -40,14 +40,14 @@ size_t cbor_string_codepoint_count(const cbor_item_t *item);
 
 /** Is the string definite?
  *
- * @param item[borrow] a string 
+ * @param item[borrow] a string
  * @return Is the string definite?
  */
 bool cbor_string_is_definite(const cbor_item_t *item);
 
 /** Is the string indefinite?
  *
- * @param item[borrow] a string 
+ * @param item[borrow] a string
  * @return Is the string indefinite?
  */
 bool cbor_string_is_indefinite(const cbor_item_t *item);
@@ -73,10 +73,10 @@ cbor_mutable_data cbor_string_handle(const cbor_item_t *item);
  * @param data The memory block. The caller gives up the ownership of the block. libcbor will deallocate it when appropriate using its free function
  * @param length Length of the data block
  */
-void cbor_string_set_handle(cbor_item_t *item, cbor_mutable_data restrict data, size_t length);
+void cbor_string_set_handle(cbor_item_t *item, cbor_mutable_data __restrict__ data, size_t length);
 
 /** Get the handle to the array of chunks
- * 
+ *
  * Manipulations with the memory block (e.g. sorting it) are allowed, but the validity and the number of chunks must be retained.
  *
  * @param item[borrow] A indefinite string
